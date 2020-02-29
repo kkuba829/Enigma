@@ -1,9 +1,8 @@
 package file.utils;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import com.sun.javafx.iio.ios.IosDescriptor;
+
+import java.io.*;
 
 public class FileTool {
     public static String getFileContent(String pathToFile) {
@@ -21,4 +20,13 @@ public class FileTool {
         }
         return stringBuilder.toString();
     }
-}
+
+    public static void writeFileContent(String absoltePath, String text) throws IOException {
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(absoltePath))) {
+            writer.write(text);
+        }catch (IOException e) {
+            System.out.println("Coudl not write in file " + absoltePath);
+        }
+    }
+
+        }
