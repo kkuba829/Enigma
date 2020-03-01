@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainController">
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainController">
     <children>
-        <TextArea fx:id="textArea" layoutX="38.0" layoutY="145.0" prefHeight="226.0" prefWidth="520.0" />
-        <Button fx:id="encodeTigger" layoutX="418.0" layoutY="94.0" mnemonicParsing="false" onAction="#triggerEncoding" prefHeight="26.0" prefWidth="139.0" text="ENCODE" />
-        <Button fx:id="decodeTigger" layoutX="418.0" layoutY="56.0" mnemonicParsing="false" onAction="#triggerDecoding" prefHeight="26.0" prefWidth="139.0" text="DECODE" />
-      <Button layoutX="28.0" layoutY="56.0" mnemonicParsing="false" onAction="#saveToFile" prefHeight="26.0" prefWidth="65.0" text="Save" />
-      <Button fx:id="LoadFile" layoutX="30.0" layoutY="94.0" mnemonicParsing="false" onAction="#LoadFile" prefHeight="26.0" prefWidth="66.0" text="Load" />
+        <ToolBar layoutX="38.0" layoutY="145.0">
+            <items>
+                <TextArea fx:id="textArea" prefHeight="226.0" prefWidth="520.0"/>
+                <ScrollBar orientation="VERTICAL" prefHeight="226.0" prefWidth="14.0"/>
+            </items>
+        </ToolBar>
+        <Button fx:id="encodeTigger" layoutX="444.0" layoutY="79.0" mnemonicParsing="false" onAction="#triggerEncoding"
+                prefHeight="26.0" prefWidth="139.0" text="ENCODE" textFill="RED"/>
+        <Button fx:id="decodeTigger" layoutX="294.0" layoutY="79.0" mnemonicParsing="false" onAction="#triggerDecoding"
+                prefHeight="26.0" prefWidth="139.0" text="DECODE" textFill="#00ff09"/>
+        <Button layoutX="213.0" layoutY="13.0" mnemonicParsing="false" onAction="#saveToFile" prefHeight="26.0"
+                prefWidth="66.0" text="Save" textFill="#871b1b8f"/>
+        <Button fx:id="LoadFile" layoutX="212.0" layoutY="53.0" mnemonicParsing="false" onAction="#LoadFile"
+                prefHeight="26.0" prefWidth="66.0" text="Load"/>
+        <ChoiceBox fx:id="cipherChoose" layoutX="364.0" layoutY="22.0" prefWidth="150.0"/>
+        <Label layoutX="86.0" layoutY="17.0" prefHeight="18.0" prefWidth="121.0" text="Choose save directory"
+               textAlignment="CENTER"/>
+        <Label layoutX="91.0" layoutY="57.0" prefHeight="18.0" prefWidth="111.0" text="Choose file to load"/>
+        <Label layoutX="386.0" layoutY="4.0" text="Cipher method type"/>
+        <Label layoutX="399.0" layoutY="57.0" prefHeight="18.0" prefWidth="79.0" text="Choice action"
+               textAlignment="RIGHT"/>
     </children>
 </AnchorPane>
